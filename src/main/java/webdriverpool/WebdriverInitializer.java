@@ -12,14 +12,12 @@ public class WebdriverInitializer {
   public static ChromeDriver driver;
 
   public static void initialize(){
-    //download webdriver dan setup
+    // setup chromedriver
     WebDriverManager.chromedriver().setup();
-
-    //nambahin incognito
+    // run with incognito
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--incognito", "--start-maximized");
-
-    //inisialisasi webdriver
+    // initialize webdriver
     driver = new ChromeDriver(options);
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
