@@ -51,13 +51,6 @@ public class GudangAdaPage {
     poweredByLink.click();
   }
 
-  public String getAtlasTitle() {
-    List<String> windows = new ArrayList<>(driver.getWindowHandles());
-    driver.switchTo().window(windows.get(1));
-    String title = driver.getTitle();
-    return title;
-  }
-
   public void inputEmail(String email) {
     WebElement user = driver.findElementById("email");
     user.sendKeys(email);
